@@ -10,10 +10,10 @@ class Api::DepartmentsController < ApplicationController
 
   def create
     department = Department.new(department_params)
-    if deparment.save
-      render json: deparment
+    if department.save
+      render json: department
     else
-      render json: department.errors, status 422
+      render json: department.errors, status: 422
     end
   end
 
@@ -21,7 +21,7 @@ class Api::DepartmentsController < ApplicationController
     if @department.update(department_params)
       render json: @department
     else
-      render json: @deparment.errors, status: 422
+      render json: @department.errors, status: 422
     end
   end
 
